@@ -58,7 +58,7 @@ def work():
             print(errorMassage)
     endTime = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 
-    # 检查预约到的座位号
+    # Check the reserved seat number
     floor_seat = ut.getNextDayFloor_SeatNum(userAccNum=USERINFO.getAccountNumber(), userPW=USERINFO.getPassword())
 
     if successFlag == True:
@@ -86,6 +86,6 @@ def work():
 
 schedule.every().day.at("06:29:52").do(work)
 while True:
-    schedule.run_pending()  # run_pending: 运行所有可以运行的任务
-    time.sleep(1)  # 睡眠1秒
-# work()
+    schedule.run_pending()  
+    time.sleep(1) 
+
